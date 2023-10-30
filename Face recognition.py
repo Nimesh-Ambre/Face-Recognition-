@@ -5,7 +5,7 @@ import os
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Open the video file
-video_capture = cv2.VideoCapture('Raveenasing.mp4')
+video_capture = cv2.VideoCapture('video.mp4')
 
 # Create a directory to save the extracted faces
 if not os.path.exists('extracted_faces'):
@@ -37,8 +37,8 @@ while True:
             # Draw a rectangle around the detected face
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-            # Add the label "Prajeet Rao 48" below the rectangle
-            label = "Prajeet Rao 48"
+            # Add the label "Person id" below the rectangle
+            label = "Person id"
             cv2.putText(frame, label, (x, y + h + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 
             # Save the detected face with the label
